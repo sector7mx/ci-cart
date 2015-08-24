@@ -3,6 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<title>Shop</title>
+	<style type="text/css">
+		body {
+			font: 13px; Arial;
+		}
+		#products {
+			text-align: center; float: left;			
+		}
+		#products ul {
+			list-style: none; margin: 0px;
+		}
+		#products li {
+			width: 150px; padding: 4px; margin: 8px;
+			border: 1px solid #ddd; background-color: #eee;
+			-moz-border-radius; 4px; -webkit-border-radius: 4px;
+		}
+		#products .name {
+			font-size: 15px; margin: 5px;
+		}
+		#products .price {
+			margin: 5px;
+		}
+		#products .option {
+			margin: 5px;
+		}
+		#products .trumb {
+			width: 25%;
+			height: 25%;
+		}
+	</style>
 </head>
 <body>
 
