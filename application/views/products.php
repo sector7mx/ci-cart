@@ -31,6 +31,29 @@
 			width: 25%;
 			height: 25%;
 		}
+		#cart {
+			padding: 4px; margin: 8px; float: left;
+			border: 1px solid #ddd; background-color: #eee;
+			-moz-border-radius; 4px; -webkit-border-radius: 4px;
+		}
+		#cart table {
+			width: 320; border-collapse: collapse;
+			text-align: left;
+		}
+		#cart th {
+			border-bottom:  1px solid #aaa;
+		}
+		#cart caption {
+			font-size: 15px; height: 30px; text-align: left;
+		}
+		#cart .total {
+			height: 40px;
+		}
+		#cart .remove a {
+			color: red;
+		}
+
+
 	</style>
 </head>
 <body>
@@ -67,14 +90,50 @@
 	</li>
 	<?php endforeach; ?>
 </ul>
-
 </div>
 
+<?php if ($cart = $this->cart->contents()): ?>
 <div id="cart">
 
+	<table>
+		<caption>Carrito Apartame</caption>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Option</th>
+				<th>Price</th>
+				<th></th>
+			</tr>
+		</thead>
+
+
+		<?php foreach ($cart as $item) : ?>
+			<tr>
+				<td><?php echo $item['name'];?></td>
+				<td>
+					<?php if ($this->cart->has_options($item['rowid'])) {
+
+						foreach ($this->cart->product_options($item['rowid']) as $option => $value) {
+							echo $option . ": <em>" . $value . "</em>";
+						}
+					}?>					
+
+				</td>
+				<td>$<?php echo $item['subtotal']; ?></td>
+				<td class="remove">
+					<?php echo anchor('shop/remove/'.$item['rowid'],'X'); ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+			<tr class="total">
+				<td colspan="2"><strong>Total</strong></td>
+				<td>$<?php echo $this->cart->total(); ?></td>
+			</tr>
+
+	</table>
 
 </div>
-
+<?php endif; ?>
 
 
 </body>
