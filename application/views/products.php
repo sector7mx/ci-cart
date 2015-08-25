@@ -85,7 +85,16 @@
 		</div>
 
 		<?php echo form_hidden('id',$product->id);?>
-		<?php echo form_submit('action','Add to Cart'); ?>
+		<?php $data = array(
+              'name'        => 'apartame',
+              'id'          => 'apartame',
+              'value'       => '',
+              'maxlength'   => '5',
+              'size'        => '10',
+              'style'       => 'width:50%',
+            );
+            echo form_input($data);?>
+		<?php echo form_submit('action','Apartame Ya!'); ?>
 		<?php echo form_close(); ?>
 	</li>
 	<?php endforeach; ?>
@@ -100,9 +109,9 @@
 		<thead>
 			<tr>
 				<th>Item</th>
-				<th>Option</th>
-				<th>Price</th>
-				<th></th>
+				<th>Opción</th>
+				<th>Precio</th>
+				<th>Apartame</th>
 			</tr>
 		</thead>
 
@@ -120,17 +129,19 @@
 
 				</td>
 				<td>$<?php echo $item['subtotal']; ?></td>
+				<td>$0000.00</td>
 				<td class="remove">
 					<?php echo anchor('shop/remove/'.$item['rowid'],'X'); ?>
 				</td>
+				
 			</tr>
 		<?php endforeach; ?>
 			<tr class="total">
 				<td colspan="2"><strong>Total</strong></td>
 				<td>$<?php echo $this->cart->total(); ?></td>
 			</tr>
-
 	</table>
+	<button>Confirmar Orden Apartame!</button>
 
 </div>
 <?php endif; ?>
