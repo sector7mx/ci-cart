@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.post demo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body>
+<!-- the result of the search will be rendered inside this div -->
+
+<div id="id01"></div>
+ 
+<script>
+$(document).ready(function(){
+  
+    var jsondata = 
+          {
+              qty: 4,
+              id: "123456",
+              att: {
+                'Linea 1': 'Algun Valor 1',
+                'Linea 2': 'Algun Valor 2',
+                'Linea 3': 'Algun Valor 3'
+          }
+    };
+
+    $("#post").click(function(){
+        $.post("appartame.php",jsondata,function(data,status){
+            alert("RESPUESTA JSON: " + data + "\nStatus: " + status);
+        });
+    });
+
+    $("#get").click(function(){
+    $.get("http://localhost/public/employees.json", function(data, status){
+      document.getElementById("id01").innerHTML = data;
+        
+    });
+});
+
+
+});
+</script>
+</head>
+<body>
+
+<button id="post">POST</button><button id="get">GET</button>
+<p>Enviar datos en formato JSON a test.php y regresa los mismos datos JSON en un alert de jquery</p>
+<p>Con esto se prueba elenvio y recepcion de datos tipo JSON</p>
+<pre>
+
+$(document).ready(function(){
+  
+    var jsondata = 
+          {
+              qty: 4,
+              id: "123456",
+              att: {
+                'Linea 1': 'Algun Valor 1',
+                'Linea 2': 'Algun Valor 2',
+                'Linea 3': 'Algun Valor 3'
+          }
+    };
+
+    $("button").click(function(){
+
+        $.post("appartame.php",jsondata,function(data,status){
+
+            alert("RESPUESTA JSON: " + data + "\nStatus: " + status);
+
+        });
+
+    });
+
+});
+
+</pre>
+ 
+</body>
+</html>
