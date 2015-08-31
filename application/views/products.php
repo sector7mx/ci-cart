@@ -154,6 +154,32 @@
 </div>
 <?php endif; ?>
 
+
+<div>
+	<h2>Datos Cliente</h2>
+	<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Nombre completo</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Calle">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Telefono de Contacto</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Colonia">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Guardar Datos</button>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
 <div>
 	<h2>Datos de Envio</h2>
 	<form class="form-horizontal">

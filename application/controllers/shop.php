@@ -6,8 +6,6 @@ class Shop extends CI_Controller {
 	 * Index Page for this controller.
 	 *	 
 	 */
-	
-
 
 	function index()
 	{

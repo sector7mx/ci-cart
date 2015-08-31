@@ -15,8 +15,27 @@ $(document).ready(function(){
   
     var jsondata = 
           {
+              name:"MiProductoUno",
               qty: 4,
               id: "123456",
+              att: {
+                'Linea 1': 'Algun Valor 1',
+                'Linea 2': 'Algun Valor 2',
+                'Linea 3': 'Algun Valor 3'
+          },
+          {
+              name:"MiProductoDos",
+              qty: 3,
+              id: "123457",
+              att: {
+                'Linea 1': 'Algun Valor 1',
+                'Linea 2': 'Algun Valor 2',
+                'Linea 3': 'Algun Valor 3'
+          },
+          {
+              name:"MiProductoTres",
+              qty: 2,
+              id: "123458",
               att: {
                 'Linea 1': 'Algun Valor 1',
                 'Linea 2': 'Algun Valor 2',
@@ -25,8 +44,8 @@ $(document).ready(function(){
     };
 
     $("#post").click(function(){
-        $.post("appartame.php",jsondata,function(data,status){
-            alert("RESPUESTA JSON: " + data + "\nStatus: " + status);
+        $.post("http://localhost/ci-cart/shop",jsondata,function(data,status){
+            //alert("RESPUESTA JSON: " + data + "\nStatus: " + status);
         });
     });
 
